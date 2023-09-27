@@ -6,7 +6,7 @@ const SearchBar = () => {
                 <i className="bi bi-search"></i>
             </div>
             <button className="col-1 btn btn-outline-success btn-sm rounded-5 fw-bold m-3">Add Item</button>
-            <i className="bi bi-printer" style={{fontSize: '2rem'}}></i>
+            <i className="col-1 bi bi-printer text-success" style={{fontSize: '2rem'}}></i>
 
         </div>
     )

@@ -3,9 +3,9 @@ import avacado from '../utils/img/AvocadoHass.jpg'
 import StatusPanel from './StatusPanel'
 
 
-const ProductTable = () => {
+const ProductTable = ({setOpenModal}) => {
     return (
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                     <th scope="col" className="col-1"></th>
@@ -20,14 +20,14 @@ const ProductTable = () => {
             <tbody>
                 {products?.map ((product) => {
                     return (
-                        <tr>
+                        <tr key={product.id}>
                             <th scope="row"><img className="img-fluid " src={avacado} alt="avacado"></img></th>
                             <td>{product.name}</td>
                             <td>{product.brand}</td>
                             <td>{product.price}</td>
                             <td>{product.quantity}</td>
                             <td>{product.total}</td>
-                            <td className='bg-light'>{<StatusPanel/>}</td>
+                            <td className='bg-light'>{<StatusPanel product={product} setOpenModal={setOpenModal}/>}</td>
                         </tr>
                     )
                 })}
