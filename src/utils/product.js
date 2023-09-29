@@ -19,7 +19,7 @@ export let products = [
 	},
 	{
 		id: 2, 
-		name: 'Chicken Breast Fillets, Boneless Matuu maMarinated 6 Ounce Raw, Invivid',
+		name: 'Chicken Breast Fillet',
 		brand: 'Hormel Black LabeImany',
 		price: '$60.67/6*1LB',
 		quantity: '0 X6*1LB',

@@ -2,9 +2,12 @@ import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
 import { Provider, useSelector } from 'react-redux';
 import appStore from '../utils/store'
-import CrossPopUp from './CrossPopUp';
+import CrossPopUp from "./CrossPopUp";
+import {useState} from 'react';
 
-const Body = ({setOpenModal}) => {
+const Body = () => {
+    const [showLogin, setShowLogin] = useState(false);
+    const [id, setId] = useState();
     // const openModal = useSelector((appStore) => appStore?.crossPopUp?.openModal)
     return (
         <>
@@ -12,7 +15,8 @@ const Body = ({setOpenModal}) => {
         <div className="d-flex justify-content-center">
             <div className="border border-2 col-10 p-2">
                 <SearchBar/>
-                <ProductTable setOpenModal={setOpenModal}/>
+                <ProductTable setShowLogin={setShowLogin} setId={setId}/>
+                <CrossPopUp show={showLogin} close={() => setShowLogin(false)} id={id}/>
             </div>
         </div>
         

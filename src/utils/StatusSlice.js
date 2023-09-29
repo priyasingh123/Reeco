@@ -8,8 +8,8 @@ const statusSlice = createSlice({
     },
     reducers: {
         changeStatus: (state, action) => {
-            console.log ('payload', action.payload)
-            state.statusOfItems[action.payload.id] = action.payload.status
+            // console.log ('action.payload ', action.payload)
+            state.statusOfItems[action.payload.id] = action.payload
         }
     }
 })

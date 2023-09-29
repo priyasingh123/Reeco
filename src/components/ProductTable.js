@@ -3,7 +3,7 @@ import avacado from '../utils/img/AvocadoHass.jpg'
 import StatusPanel from './StatusPanel'
 
 
-const ProductTable = ({setOpenModal}) => {
+const ProductTable = ({setShowLogin, setId}) => {
     return (
         <table className="table">
             <thead>
@@ -27,7 +27,7 @@ const ProductTable = ({setOpenModal}) => {
                             <td>{product.price}</td>
                             <td>{product.quantity}</td>
                             <td>{product.total}</td>
-                            <td className='bg-light'>{<StatusPanel product={product} setOpenModal={setOpenModal}/>}</td>
+                            <td className='bg-light'>{<StatusPanel product={product} setShowLogin={setShowLogin} setId={setId}/>}</td>
                         </tr>
                     )
                 })}
