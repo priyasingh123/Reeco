@@ -12,6 +12,7 @@ const EditPopUp = (props) => {
     const dispatch = useDispatch()
 
     // const handleSend = () => {
+    //     if (statusOfItems[id].price == )
     //     dispatch(changeStatus({...statusOfItems[id], }))
     // }
 

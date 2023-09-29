@@ -10,7 +10,7 @@ const Details = () => {
                 <div className="vr"></div>
                 <DetailItem heading={"Total"} detail={"$ 15,028.3"}/>
                 <div className="vr"></div>
-                <DetailItem heading={"Category"} detail={"TODO"}/>
+                <DetailItem heading={"Category"} detail={""}/>
                 <div className="vr"></div>
                 <DetailItem heading={"Department"} detail={"300-444-678"}/>
                 <div className="vr"></div>

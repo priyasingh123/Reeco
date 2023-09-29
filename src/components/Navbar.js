@@ -18,7 +18,7 @@ const Navbar = () => {
                             <a className="nav-link text-white" href="#">Analytics</a>
                         </li>
                     </ul>
-                    <i className="bi bi-cart"></i>
+                    <i className="bi bi-cart text-white fs-3 me-3"></i>
                         <a className="nav-link dropdown-toggle text-white" href="#" role="button"  aria-expanded="false">
                             Hello, James
                         </a>

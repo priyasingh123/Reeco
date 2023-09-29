@@ -3,14 +3,17 @@ import avacado from '../utils/img/AvocadoHass.jpg'
 import StatusPanel from './StatusPanel'
 import { useDispatch } from 'react-redux'
 import { changeStatus } from '../utils/StatusSlice'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 
 const ProductTable = ({setShowLogin, setId, setShowEdit}) => {
     const dispatch = useDispatch()
+    const [productData, setProductData]=useState([])
+    
     useEffect (() => {
         products?.map ((product) => dispatch(changeStatus({...product}))
         )
+        setProductData(products)
     }, [])
     return (
         <table className="table">
@@ -26,7 +29,7 @@ const ProductTable = ({setShowLogin, setId, setShowEdit}) => {
                 </tr>
             </thead>
             <tbody>
-                {products?.map ((product) => {
+                {productData?.map ((product) => {
                     return (
                         <tr key={product.id}>
                             <th scope="row"><img className="img-fluid " src={avacado} alt="avacado"></img></th>
