@@ -4,6 +4,15 @@ const StatusButton = ({status}) => {
         case "Approved":
             type = 'success'
             break;
+        case "Price Updated":
+            type = 'success'
+            break;
+        case "Quantity Updated":
+            type = 'success'
+            break;
+        case "Quantity and Price Updated":
+            type = 'success'
+            break;
         case "Missing":
             type = 'danger'
             break;

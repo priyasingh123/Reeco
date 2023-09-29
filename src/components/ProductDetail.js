@@ -2,12 +2,10 @@ import appStore from '../utils/store'
 import { useSelector } from 'react-redux'
 import {useState} from 'react'
 
-const ProductDetail = ({id}) => {
+const ProductDetail = ({id, price, quantity, setPrice, setQuantity}) => {
 
     const statusOfItems = useSelector ((appStore) => appStore.status.statusOfItems)
-    const [price, setPrice] = useState(statusOfItems[id].price)
-    const [quantity, setQuantity] = useState(statusOfItems[id].quantity)
-    
+    console.log ('price ',price)
     return (
         <div className="container">
             <div className="row mb-2">
