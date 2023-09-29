@@ -3,7 +3,7 @@ import avacado from '../utils/img/AvocadoHass.jpg'
 import StatusPanel from './StatusPanel'
 
 
-const ProductTable = ({setShowLogin, setId}) => {
+const ProductTable = ({setShowLogin, setId, setShowEdit}) => {
     return (
         <table className="table">
             <thead>
@@ -24,30 +24,13 @@ const ProductTable = ({setShowLogin, setId}) => {
                             <th scope="row"><img className="img-fluid " src={avacado} alt="avacado"></img></th>
                             <td>{product.name}</td>
                             <td>{product.brand}</td>
-                            <td>{product.price}</td>
-                            <td>{product.quantity}</td>
+                            <td>${product.price}/6*1LB</td>
+                            <td><label className="fw-bold" style={{width: "20px"}}>{product.quantity}</label>{product.specific_quantity}</td>
                             <td>{product.total}</td>
-                            <td className='bg-light'>{<StatusPanel product={product} setShowLogin={setShowLogin} setId={setId}/>}</td>
+                            <td className='bg-light'>{<StatusPanel product={product} setShowLogin={setShowLogin} setShowEdit={setShowEdit} setId={setId}/>}</td>
                         </tr>
                     )
                 })}
-                {/* <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr> */}
             </tbody>
         </table>
     )
