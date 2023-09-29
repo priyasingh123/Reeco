@@ -2,10 +2,11 @@ import appStore from '../utils/store'
 import { useSelector } from 'react-redux'
 import {useState} from 'react'
 
-const ProductDetail = ({id, setPrice, setQuantity, quantity, price}) => {
+const ProductDetail = ({id}) => {
 
     const statusOfItems = useSelector ((appStore) => appStore.status.statusOfItems)
-    console.log (quantity, price)
+    const [price, setPrice] = useState(statusOfItems[id].price)
+    const [quantity, setQuantity] = useState(statusOfItems[id].quantity)
     
     return (
         <div className="container">
@@ -19,8 +20,8 @@ const ProductDetail = ({id, setPrice, setQuantity, quantity, price}) => {
                 <label className="col-5 ">{`Quantity`}</label>
                 <div className="col-7">
                     <label className="text-secondary">
-                        <button className="btn btn-sm btn-success me-2" onClick={() => setQuantity(quantity-1)}>-</button>
-                        <input className="col-2 rounded-2 border border-normal" value={quantity}/> 
+                        <button className="btn btn-sm btn-success me-2" disabled={quantity <= 0} onClick={() => setQuantity(quantity-1)}>-</button>
+                        <input className="col-2 rounded-2 border border-normal" value={quantity} onChange={(e) => setQuantity(e.target.value)}/> 
                         <button className="btn btn-sm ms-2 me-2 btn-success" onClick={() => setQuantity(quantity+1)}>+</button>
                         X 6 * 1LB
                     </label>

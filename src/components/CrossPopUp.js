@@ -12,11 +12,13 @@ const CrossPopUp = (props) => {
 
     const {id, show, close} = props
     const handleNo = () => {
+        console.log ('id ',id)
         dispatch(changeStatus({...statusOfItems[id], status: 'Missing'}))
         close()
     }
-
+    
     const handleYes = () => {
+        console.log ('id ',id)
         dispatch(changeStatus({...statusOfItems[id], status: 'Missing - Urgent'}))
         close()
     }

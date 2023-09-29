@@ -1,9 +1,17 @@
 import {products} from '../utils/product'
 import avacado from '../utils/img/AvocadoHass.jpg'
 import StatusPanel from './StatusPanel'
+import { useDispatch } from 'react-redux'
+import { changeStatus } from '../utils/StatusSlice'
+import {useEffect} from 'react'
 
 
 const ProductTable = ({setShowLogin, setId, setShowEdit}) => {
+    const dispatch = useDispatch()
+    useEffect (() => {
+        products?.map ((product) => dispatch(changeStatus({...product}))
+        )
+    }, [])
     return (
         <table className="table">
             <thead>
@@ -27,7 +35,7 @@ const ProductTable = ({setShowLogin, setId, setShowEdit}) => {
                             <td>${product.price}/6*1LB</td>
                             <td><label className="fw-bold" style={{width: "20px"}}>{product.quantity}</label>{product.specific_quantity}</td>
                             <td>{product.total}</td>
-                            <td className='bg-light'>{<StatusPanel product={product} setShowLogin={setShowLogin} setShowEdit={setShowEdit} setId={setId}/>}</td>
+                            <td className='bg-light'>{<StatusPanel key={product.id} product={product} setShowLogin={setShowLogin} setShowEdit={setShowEdit} setId={setId}/>}</td>
                         </tr>
                     )
                 })}

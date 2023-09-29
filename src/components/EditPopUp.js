@@ -1,17 +1,14 @@
 import {Modal} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import avacado from '../utils/img/AvocadoHass.jpg'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import ProductDetail from './ProductDetail';
 import { changeStatus } from '../utils/StatusSlice';
 
 const EditPopUp = (props) => {
     const statusOfItems = useSelector ((appStore) => appStore.status.statusOfItems)
-    const {id, show, close} = props
-    const [quantity, setQuantity] = useState(statusOfItems[id]?.quantity)
-    const [price, setPrice] = useState(statusOfItems[id]?.price)
+    const {id, show, close} = props    
 
-    console.log ('price ',price, 'quantity ',quantity)
     const dispatch = useDispatch()
 
     // const handleSend = () => {
@@ -32,7 +29,7 @@ const EditPopUp = (props) => {
             <Modal.Body>
                 <div className='d-flex'>
                     <img src={avacado} style={{height: "100px", weight: "100px"}}alt="product-avacado"/>
-                    <ProductDetail id={id} setPrice={setPrice} setQuantity={setQuantity} price={price} quantity={quantity}/>
+                    <ProductDetail id={id}/>
 
                 </div>
             </Modal.Body>

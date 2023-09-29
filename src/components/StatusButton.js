@@ -12,7 +12,7 @@ const StatusButton = ({status}) => {
             break;
     }
     return (
-        <div className={`btn btn-${type} h-25 mr-3`}>
+        <div className={`btn btn-${type} h-25 mr-3 pe-none`}>
             {status}
         </div>
     )
